@@ -49,8 +49,8 @@ RUN groupadd --force -g $WWWGROUP sail
 RUN useradd -ms /bin/bash --no-user-group -g $WWWGROUP -u 1337 sail
 
 RUN mkdir -p /etc/swoole/ssl/certs/ /etc/swoole/ssl/private/
-RUN openssl req -x509 -nodes -days 365 -subj "/C=CA/ST=QC/O=Artisan, Inc./CN=localhost" \
-    -addext "subjectAltName=DNS:localhost" -newkey rsa:2048 \
+RUN openssl req -x509 -nodes -days 365 -subj "/C=CA/ST=QC/O=Artisan, Inc./CN=woosprout" \
+    -addext "subjectAltName=DNS:woosprout" -newkey rsa:2048 \
     -keyout /etc/swoole/ssl/private/sail-selfsigned.key \
     -out /etc/swoole/ssl/certs/sail-selfsigned.crt;
 RUN chmod 655 /etc/swoole/ssl/certs/*.crt
