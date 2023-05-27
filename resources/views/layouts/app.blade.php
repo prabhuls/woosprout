@@ -7,6 +7,16 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/woosprout-leaf.png') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/woosprout-leaf.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/woosprout-leaf.png') }}">
+        <link rel="manifest" href="{{ asset('img/woosprout-leaf.png') }}">
+        <link rel="mask-icon" href="{{ asset('img/woosprout-leaf.png') }}" color="#5bbad5">
+        <link rel="shortcut icon" href="{{ asset('img/woosprout-leaf.png') }}">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-config" content="{{ asset('img/woosprout-leaf.png') }}">
+        <meta name="theme-color" content="#ffffff">
+
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
@@ -32,5 +42,7 @@
                 {{ $slot }}
             </main>
         </div>
+
+        @stack('scripts')
     </body>
 </html>

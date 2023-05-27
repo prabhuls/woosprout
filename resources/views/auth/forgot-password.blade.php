@@ -6,7 +6,7 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <form method="POST" action="{{ route('password.email') }}">
+    <form id="forgotPassForm" method="POST" action="{{ route('password.email') }}" data-parsley-validate >
         @csrf
 
         <!-- Email Address -->
@@ -23,3 +23,11 @@
         </div>
     </form>
 </x-guest-layout>
+
+@push('scripts')
+    <script>
+        $(function() {
+            $('#forgotPassForm').parsley();
+        });
+    </script>
+@endpush
