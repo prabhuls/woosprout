@@ -50,11 +50,11 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        $invite_code = InviteCode::where('code', $request->invite_code)
+        $inviteCode = InviteCode::where('code', $request->invite_code)
             ->first();
 
-        if($invite_code) {
-            $invite_code->increment('uses');
+        if($inviteCode) {
+            $inviteCode->increment('uses');
         }
 
         Auth::login($user);
