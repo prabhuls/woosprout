@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 .btn {
-    @apply normal-case px-5 py-3 h-auto min-h-6 font-normal rounded text-base cursor-pointer;
+    @apply normal-case px-5 py-3 h-auto min-h-6 font-bold rounded text-base cursor-pointer;
 }
 
 .btn-primary {
