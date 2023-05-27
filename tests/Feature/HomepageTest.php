@@ -1,6 +1,6 @@
 <?php
 
-it('returns a successful response', function () {
+test('homepage is visible', function () {
     $response = $this->get('/');
 
     $response->assertStatus(200);

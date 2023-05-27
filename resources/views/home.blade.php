@@ -22,7 +22,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     
 </head>
-<body class="bg-gradient-to-b from-stone-100 min-h-screen">
+<body class="bg-gradient-to-b from-stone-100 min-h-screen antialiased">
     <div class="container mx-auto">
         <div class="navbar">
             <div class="navbar-start">
