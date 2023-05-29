@@ -41,8 +41,8 @@ return [
     'swoole' => [
         'ssl' => true,
         'options' => [
-            'ssl_cert_file' => '/etc/letsencrypt/live/stg-2905-ny1.woosprout.com/cert.pem',
-            'ssl_key_file' => '/etc/letsencrypt/live/stg-2905-ny1.woosprout.com/privkey.pem',
+            'ssl_cert_file' => '/etc/swoole/ssl/certs/sail-selfsigned.crt',
+            'ssl_key_file' => '/etc/swoole/ssl/private/sail-selfsigned.key',
         ]
     ],
 
