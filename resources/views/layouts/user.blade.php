@@ -24,6 +24,7 @@
 
     <!-- Scripts -->
     @vite(['resources/css/user.css', 'resources/js/user.js'])
+    @livewireStyles
 </head>
 
 <body class="bg-stone-100 font-sans antialiased lg:flex" x-data="{ open: false }">
@@ -56,6 +57,10 @@
     </div>
 
     @stack('scripts')
+
+    @livewireScripts
+    
+    <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false" data-turbo-eval="false"></script>
 </body>
 
 </html>

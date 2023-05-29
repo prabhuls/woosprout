@@ -44,4 +44,19 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function ownedTeams()
+    {
+        return $this->hasMany(Team::class, 'user_id');
+    }
+
+    /**
+     * Get all of the teams the user belongs to.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function teams()
+    {
+        return $this->belongsToMany(Team::class)->withPivot('role');
+    }
 }

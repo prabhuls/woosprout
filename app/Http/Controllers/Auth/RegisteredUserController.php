@@ -11,9 +11,8 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
 use Illuminate\View\View;
-use App\Rules\ValidInviteCode;
+use App\Actions\Auth\CreateNewUser;
 
 class RegisteredUserController extends Controller
 {
@@ -30,32 +29,11 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request, CreateNewUser $createNewUser): RedirectResponse
     {
-        $request->validate([
-            'first_name' => ['required', 'string', 'max:255'],
-            'last_name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'invite_code' => ['required', 'string', new ValidInviteCode],
-        ]);
-
-        $user = User::create([
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'invite_code' => $request->invite_code,
-        ]);
-
+        $user = $createNewUser->handle($request->all());
+        
         event(new Registered($user));
-
-        $inviteCode = InviteCode::where('code', $request->invite_code)
-            ->first();
-
-        if($inviteCode) {
-            $inviteCode->increment('uses');
-        }
 
         Auth::login($user);
 

@@ -1,4 +1,4 @@
-<nav class="absolute inset-0 transform lg:transform-none lg:opacity-100 duration-200 lg:relative z-10 w-56 bg-stone-50 text-gray-700 h-screen p-3 text-base border-r-2 border-r-stone-200"
+<nav class="absolute inset-0 transform lg:transform-none lg:opacity-100 duration-200 lg:relative w-56 bg-stone-50 text-gray-700 h-screen p-3 text-base border-r-2 border-r-stone-200"
     :class="{ 'translate-x-0 ease-in opacity-100': open === true, '-translate-x-full ease-out opacity-0': open === false }">
     <div class="flex justify-between">
         <div class="dropdown  w-full relative">
