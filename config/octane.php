@@ -41,10 +41,8 @@ return [
     'swoole' => [
         'ssl' => true,
         'options' => [
-            // 'ssl_cert_file' => '/etc/swoole/ssl/certs/sail-selfsigned.crt',
-            // 'ssl_key_file' => '/etc/swoole/ssl/private/sail-selfsigned.key',
-            'ssl_cert_file' => '/etc/nginx/ssl/wsp-stg-01.woosprout.com/1796195/server.crt',
-            'ssl_key_file' => '/etc/nginx/ssl/wsp-stg-01.woosprout.com/1796195/server.key',
+            'ssl_cert_file' => env('OCTANE_SSL_CERT', '/etc/swoole/ssl/certs/sail-selfsigned.crt'),
+            'ssl_key_file' => env('OCTANE_SSL_KEY', '/etc/swoole/ssl/private/sail-selfsigned.key'),
         ]
     ],
 
