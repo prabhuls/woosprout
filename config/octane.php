@@ -38,13 +38,13 @@ return [
 
     'server' => env('OCTANE_SERVER', 'roadrunner'),
 
-    'swoole' => [
-        'ssl' => true,
-        'options' => [
-            'ssl_cert_file' => env('OCTANE_SSL_CERT', '/etc/swoole/ssl/certs/sail-selfsigned.crt'),
-            'ssl_key_file' => env('OCTANE_SSL_KEY', '/etc/swoole/ssl/private/sail-selfsigned.key'),
-        ]
-    ],
+    // 'swoole' => [
+    //     'ssl' => true,
+    //     'options' => [
+    //         'ssl_cert_file' => env('OCTANE_SSL_CERT', '/etc/swoole/ssl/certs/sail-selfsigned.crt'),
+    //         'ssl_key_file' => env('OCTANE_SSL_KEY', '/etc/swoole/ssl/private/sail-selfsigned.key'),
+    //     ]
+    // ],
 
     /*
     |--------------------------------------------------------------------------
