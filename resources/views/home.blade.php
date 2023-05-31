@@ -48,7 +48,7 @@
         </div>
 
         <div class="my-4 lg:my-24 flex flex-col justify-center text-center p-4" style="min-height:80vh">
-            <img src="{{ asset("img/home-hero-t.png") }}" alt="" class=" w-28 lg:w-32 mx-auto m-2">
+            <img src="{{ asset("img/home-hero-t.png") }}" width="322" height="345" alt="" class=" w-28 lg:w-32 mx-auto m-2">
             <h1 class="md:text-4xl max-w-3xl my-2 mx-auto capitalize">Ignite your marketing journey with powerful solutions tailored for SMBs</h1>
             <div class="max-w-3xl my-2 mx-auto text-xl">Supercharge your marketing efforts. Drive conversions, engage customers, and achieve remarkable growth without compromising your budget.</div>
             <a href="{{ url("/signup") }}" class="btn btn-primary w-72 mt-4 mx-auto my-2">Try WooSprout free for 14 days</a>
